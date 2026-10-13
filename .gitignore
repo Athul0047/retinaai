@@ -1,0 +1,45 @@
+# Python bytecode and test/tool caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments and local environment configuration
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# Dataset files and generated data
+/data/**
+!/data/.gitkeep
+
+# Model weights and checkpoints
+/models/**
+!/models/.gitkeep
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Generated reports and figures
+/reports/**
+!/reports/.gitkeep
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
