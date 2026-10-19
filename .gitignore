@@ -8,6 +8,7 @@ __pycache__/
 htmlcov/
 
 # Virtual environments and local environment configuration
+.venv*/
 .venv/
 venv/
 env/
@@ -15,8 +16,10 @@ ENV/
 .env
 .env.*
 !.env.example
+.kaggle/
 *.pem
 *.key
+*.secret
 credentials.json
 service-account*.json
 
@@ -38,6 +41,9 @@ service-account*.json
 
 # Notebook checkpoints
 .ipynb_checkpoints/
+
+# Generated Python and application logs
+*.log
 
 # Editor and operating system files
 .vscode/

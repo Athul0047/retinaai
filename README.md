@@ -1,6 +1,6 @@
 # RetinaAI
 
-RetinaAI is a local-first educational project exploring diabetic retinopathy (DR) grading from retinal fundus photographs. Its planned task is to classify an image into one of five severity grades:
+RetinaAI is an educational project for exploring diabetic retinopathy (DR) grading from retinal fundus photographs. The model was trained in Google Colab using the APTOS 2019 dataset and EfficientNet-B0. It is intended to predict one of five grades:
 
 | Grade | Description |
 |---:|---|
@@ -12,10 +12,19 @@ RetinaAI is a local-first educational project exploring diabetic retinopathy (DR
 
 ## Purpose and limitations
 
-This project is for personal learning and educational research. It is not clinically validated, does not provide medical advice, and must not be used to diagnose, screen, or guide treatment. Any future model output will be an experimental prediction, not a diagnosis or a substitute for assessment by a qualified eye-care professional.
+This project is for personal learning and educational research. It is not clinically validated, does not provide medical advice, and must not be used to diagnose, screen, or guide treatment. Model outputs are experimental predictions, not diagnoses or substitutes for assessment by a qualified eye-care professional.
 
-No trained model or functioning classifier is included in this initial scaffold. Do not interpret this repository as producing predictions.
+## Current status
 
-## Project status
+The exported configuration and weights are stored locally as `models/config.json` and `models/retinaai_model.pth`. Local model loading and prediction are implemented in `src/prediction.py`. `app.py` provides a local Streamlit image-upload interface; training data is not included and does not need to be downloaded to the Mac for inference.
 
-Initial project scaffold only. Dataset access, model development, explainability, and the web interface are planned for later, separately reviewed milestones.
+## Run locally
+
+With the project virtual environment available, install the listed runtime dependencies and start Streamlit bound to the local machine:
+
+```sh
+./.venv/bin/python -m pip install -r requirements.txt
+./.venv/bin/python -m streamlit run app.py --server.address 127.0.0.1
+```
+
+Then open the local address printed by Streamlit. The model runs locally; the app does not need Colab or the APTOS dataset at runtime.
